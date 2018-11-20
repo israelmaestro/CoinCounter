@@ -1,0 +1,468 @@
+<html lang="pt-BR">
+	<head>
+		<title>CoinCounter</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link
+			rel="icon"
+			href="001brl.png"
+			type="image/png"
+			sizes="16x16"
+			>
+		<link type="text/css" rel="stylesheet" href="styles/styles.css"/>
+		<script type="text/javascript" src="scripts/scripts.js"></script>
+	</head>
+	<body onload="init()">
+		<table>
+
+			<tr>
+				<td colspan="4">
+					<table class="titleTable">
+						<tr>
+							<td
+								id="hsLogo"
+								class="titleMenu"
+								style="
+									color: transparent;
+									background-image: url(images/menu.png)
+									"
+								onclick="showModal('menuModal')"
+								/>
+							<td class="titleText">
+								CoinCounter
+							</td>
+							<td
+								id="hsLogo"
+								class="titleMenu"
+								style="
+									color: transparent;
+									background-image: url(images/logos/hsSolutionLogo.png)
+									"
+								onclick="showModal('aboutModal')"
+								/>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+			<!-- Modal Menu -->
+			<div
+				id="menuModal"
+				class="modal"
+				onclick="closeModalByClickingOut('menuModal')"
+				>
+				<!-- Modal content -->
+				<div
+					id="menuModalContent"
+					class="modalMenu-content"
+					>
+					<div class="modalMenu-header">
+						<span
+							class="closeModal"
+							onclick="closeModal('menuModal')"
+							>&times;
+						</span>
+						<h3 class="menuTitleText">OPÇÕES</h3>
+					</div>
+					<div class="modalMenu-body">
+						<a href="index.html">Recarregar</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal About -->
+			<div
+				id="aboutModal"
+				class="modal"
+				onclick="closeModalByClickingOut('aboutModal')"
+				>
+				<!-- Modal content -->
+				<div
+					id="aboutModalContent"
+					class="modalMenu-content"
+					>
+					<div class="modalMenu-body">
+						<span
+							class="closeModal"
+							onclick="closeModal('aboutModal')"
+							>&times;
+						</span>
+						<br/>
+						<center>
+							<p>
+								<b>CoinCounter v1.0.0</b>
+								<br/>
+								Powered by:
+								<br/>
+								<img
+									src="images/logos/hsSolutionLogoCloud.png"
+									style="
+										width: calc(40vw + .50vh);
+										height: auto;
+										display: inline;
+										"
+									/>
+								<br>
+								<a href="mailto:israelmaestro@gmail.com">israelmaestro@gmail.com</a>
+							</p>
+						</center>
+					</div>
+				</div>
+			</div>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input100"
+						type="number"
+						onblur="calculoParcial('input100', '100', '100brlResult')"
+						onchange="calculoParcial('input100', '100', '100brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/100brl.png);"
+					class="coinImage"
+					id="100"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="100brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input050"
+						type="number"
+						onblur="calculoParcial('input050', '50', '050brlResult')"
+						onchange="calculoParcial('input050', '50', '050brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/050brl.png);"
+					class="coinImage"
+					id="50"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="050brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input020"
+						type="number"
+						onblur="calculoParcial('input020', '20', '020brlResult')"
+						onchange="calculoParcial('input020', '20', '020brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/020brl.png);"
+					class="coinImage"
+					id="20"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="020brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input010"
+						type="number"
+						onblur="calculoParcial('input010', '10', '010brlResult')"
+						onchange="calculoParcial('input010', '10', '010brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/010brl.png);"
+					class="coinImage"
+					id="10"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="010brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input005"
+						type="number"
+						onblur="calculoParcial('input005', '5', '005brlResult')"
+						onchange="calculoParcial('input005', '5', '005brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/005brl.png);"
+					class="coinImage"
+					id="5"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="005brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input002"
+						type="number"
+						onblur="calculoParcial('input002', '2', '002brlResult')"
+						onchange="calculoParcial('input002', '2', '002brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/002brl.png);"
+					class="coinImage"
+					id="2"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="002brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input001"
+						type="number"
+						onblur="calculoParcial('input001', '1', '001brlResult')"
+						onchange="calculoParcial('input001', '1', '001brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/001brl.png);"
+					class="coinImage"
+					id="1"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="001brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input000_50"
+						type="number"
+						onblur="calculoParcial('input000_50', '0_50', '000_50brlResult')"
+						onchange="calculoParcial('input000_50', '0_50', '000_50brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/000,5brl.png);"
+					class="coinImage"
+					id="0_50"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="000_50brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input000_25"
+						type="number"
+						onblur="calculoParcial('input000_25', '0_25', '000_25brlResult')"
+						onchange="calculoParcial('input000_25', '0_25', '000_25brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/000,25brl.png);"
+					class="coinImage"
+					id="0_25"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="000_25brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input000_10"
+						type="number"
+						onblur="calculoParcial('input000_10', '0_10', '000_10brlResult')"
+						onchange="calculoParcial('input000_10', '0_10', '000_10brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/000,1brl.png);"
+					class="coinImage"
+					id="0_10"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="000_10brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input000_05"
+						type="number"
+						onblur="calculoParcial('input000_05', '0_05', '000_05brlResult')"
+						onchange="calculoParcial('input000_05', '0_05', '000_05brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/000,05brl.png);"
+					class="coinImage"
+					id="0_05"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="000_05brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<tr>
+				<td
+					class="input"
+					>
+					<input
+						id="input000_01"
+						type="number"
+						onblur="calculoParcial('input000_01', '0_01', '000_01brlResult')"
+						onchange="calculoParcial('input000_01', '0_01', '000_01brlResult')"
+						placeholder="0"
+						min="0"
+						max="100"
+						/>
+				</td>
+				<td
+					style="background-image: url(images/currencies/brl/000,01brl.png);"
+					class="coinImage"
+					id="0_01"
+					/>
+				<td class="currency">
+				</td>
+				<td
+					id="000_01brlResult"
+					class="preResult"
+					/>
+			</tr>
+
+			<!-- RESULTADO -->
+			<tr>
+				<td
+					colspan="4"
+					style="margin:0;
+					padding: 0;"
+					>
+					<table
+						class="resultTable"
+						>
+						<tr>
+							<td
+								id="resultLabel"
+								class="result"
+								/>
+							</td>
+							<td
+								class="result"
+								style="
+									text-align: left;
+									"
+								id="result"
+								onchange="return resultReset();"
+								/>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
